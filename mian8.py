@@ -20,10 +20,13 @@ print("h1")
 soup=BeautifulSoup(driver.page_source, 'lxml')
 print("h2")
 
-
+k1=-1
 links = soup.select('div.user-name > a')
 x={}
+l1=0;
+
 for link in links:
+
     link2=link.get('href')
     print(link2)
     #soup=BeautifulSoup(driver.page_source, 'lxml')
@@ -71,9 +74,9 @@ for link in links:
     print("Anewshit2=")
     #print(anewshit)
     #print(anewshit2)
-    print("Time for shit3")
+    #print("Time for shit3")
     #print(anweshit3)
-    print("Time for shit4")
+    #print("Time for shit4")
     z=str(anweshit4)
     print(z)
     print(type((re.findall(r'\d+', z))[0]))
@@ -118,8 +121,24 @@ for link in links:
     # blah=soup.find("div.content >h5 ")
     #print(shit22)
     #x = {1: 2, 3: 4, 4: 3, 2: 1, 0: 0}
+    l1+=1
 
-    ''''''''
 
+
+
+print("I DONT KNOW WHT IT IS doing it")
+print(l1)
 sorted_x = sorted(x.items(), key=operator.itemgetter(1))
+print(type(sorted_x))
+
 print(sorted_x)
+
+print("Max questions are done by:")
+print(x['/users/sumeet_varma'])
+print(type(x))
+print("BHAI CGHAl kya raha hai?")
+print(str(sorted_x[-1][0]))
+finalurl="https://www.codechef.com"+(str(sorted_x[-1][0]))
+print(finalurl)
+driver.get(finalurl)
+print("Most questions are done by:"+finalurl)
